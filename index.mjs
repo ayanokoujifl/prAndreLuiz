@@ -13,7 +13,7 @@ import rotas_servicos from "./rotas/rotas_servico.mjs"
   app.use("/clientes", rotas_clientes);
   app.use("/funcionarios", rotas_funcionarios);
   app.use("/quartos", rotas_quartos);
-  app.use("/servico", rotas_servicos);
+  app.use("/servicos", rotas_servicos);
 
   app.use(express.static("views"));
 

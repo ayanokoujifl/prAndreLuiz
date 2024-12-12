@@ -2,10 +2,14 @@ import { getLista, novo } from "./acessa_dados_servicos.js";
 
 let indiceSelecionado = -1;
 
+window.onload = () => {
+  desenhaTabela();
+}
+
 async function cadastrarUsuario(usuario) {
   const API_URL = "http://localhost:8000/servicos/cadastrar"; //endpoint da api 
   console.log(usuario);
-  
+
   try {
     //usando fetch para fazer requisição na api 
     const resposta = await fetch(API_URL, {
@@ -34,7 +38,7 @@ async function salvar(event) {
   event.preventDefault();
   const iptTipo = document.getElementById("tipo");
   const iptHorario = document.getElementById("horario");
-  const iptValor= document.getElementById("valor");
+  const iptValor = document.getElementById("valor");
   const iptDuracao = document.getElementById("duracao");
 
   const obj = {
@@ -58,9 +62,9 @@ async function salvar(event) {
   limparCampos();
 }
 
-function desenhaTabela() {
+async function desenhaTabela() {
   const tbody = document.getElementById("tbody1");
-  const dados = getLista();
+  const dados = await fetch("http://localhost:8000/servicos/listar").then((res) => res.json());
   tbody.innerHTML = "";
   for (let i = 0; i < dados.length; i++) {
     const tr = document.createElement("tr");
