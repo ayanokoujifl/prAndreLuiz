@@ -1,5 +1,5 @@
-const tbClientes = [];
+const tbServicos = [];
 
-console.log(tbClientes);
+console.log(tbServicos);
 
-export { tbClientes };
+export { tbServicos };

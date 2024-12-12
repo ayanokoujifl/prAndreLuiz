@@ -1,13 +1,13 @@
-import { getLista, novo } from "./acessa_dados_clientes.js";
+import { getLista, novo } from "./acessa_dados_quartos.js";
 
 let indiceSelecionado = -1;
 
 async function cadastrarUsuario(usuario) {
-  const API_URL = "http://localhost:8000/clientes/cadastrar"; //endpoint da api
+  const API_URL = "http://localhost:8000/quartos/cadastrar"; //endpoint da api 
   console.log(usuario);
   
   try {
-    //usando fetch para fazer requisição na api
+    //usando fetch para fazer requisição na api 
     const resposta = await fetch(API_URL, {
       method: "POST", // Método HTTP para cadastro
       headers: {
@@ -32,16 +32,16 @@ async function cadastrarUsuario(usuario) {
 
 async function salvar(event) {
   event.preventDefault();
-  const iptNome = document.getElementById("nome");
-  const iptIdade = document.getElementById("idade");
-  const iptCpf = document.getElementById("cpf");
-  const iptEmail = document.getElementById("email");
+  const iptNumero = document.getElementById("numero");
+  const iptBloco = document.getElementById("bloco");
+  const iptIdCliente = document.getElementById("idcliente");
+  const iptDescricao = document.getElementById("descricao");
 
   const obj = {
-    nome: iptNome.value,
-    idade: iptIdade.value,
-    CPF: iptCpf.value,
-    email: iptEmail.value
+    numero: iptNumero.value,
+    bloco: iptBloco.value,
+    idcliente: iptIdCliente.value,
+    descricao: iptDescricao.value
   };
 
   const dados = getLista();
@@ -71,10 +71,10 @@ function desenhaTabela() {
     const td5 = document.createElement("td");
     const btnEditar = document.createElement("button");
 
-    td1.innerText = dados[i].nome;
-    td2.innerText = dados[i].idade;
-    td3.innerText = dados[i].CPF;
-    td4.innerText = dados[i].email;
+    td1.innerText = dados[i].numero;
+    td2.innerText = dados[i].bloco;
+    td3.innerText = dados[i].idcliente;
+    td4.innerText = dados[i].descricao;
 
     btnEditar.innerText = "Editar";
     btnEditar.classList.add("edit-button");
@@ -101,10 +101,10 @@ function selecionarLinha(indice) {
 function editar(indice) {
   const dados = getLista();
   const cliente = dados[indice];
-  document.getElementById("nome").value = cliente.nome;
-  document.getElementById("idade").value = cliente.idade;
-  document.getElementById("cpf").value = cliente.cpf;
-  document.getElementById("email").value = cliente.email;
+  document.getElementById("numero").value = quarto.numero;
+  document.getElementById("bloco").value = quarto.bloco;
+  document.getElementById("idcliente").value = quarto.idcliente;
+  document.getElementById("descricao").value = quarto.descricao;
   indiceSelecionado = indice;
 }
 
@@ -116,7 +116,7 @@ function excluir(event) {
     indiceSelecionado = -1;
     desenhaTabela();
   } else {
-    alert("Selecione o cliente que deseja excluir da base de dados.");
+    alert("Selecione o quarto que deseja excluir da base de dados.");
   }
 }
 
@@ -129,10 +129,10 @@ function limparTabela(event) {
 }
 
 function limparCampos() {
-  document.getElementById("nome").value = "";
-  document.getElementById("idade").value = "";
-  document.getElementById("cpf").value = "";
-  document.getElementById("email").value = "";
+  document.getElementById("numero").value = "";
+  document.getElementById("bloco").value = "";
+  document.getElementById("idcliente").value = "";
+  document.getElementById("descricao").value = "";
 }
 
 const btSalvar = document.getElementById("btSalvar");
