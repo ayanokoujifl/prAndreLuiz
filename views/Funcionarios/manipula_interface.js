@@ -3,7 +3,7 @@ import { getLista, novo } from "./acessa_dados_funcionarios.js";
 let indiceSelecionado = -1;
 
 async function cadastrarUsuario(usuario) {
-  const API_URL = "http://localhost:8000/funcionarios/cadastrar"; //endpoint da api 
+  const API_URL = "https://prandreluiz.onrender.com/funcionarios/cadastrar"; //endpoint da api 
   console.log(usuario);
   
   try {

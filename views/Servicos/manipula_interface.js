@@ -7,30 +7,30 @@ window.onload = () => {
 }
 
 async function cadastrarUsuario(usuario) {
-  const API_URL = "http://localhost:8000/servicos/cadastrar"; //endpoint da api 
+  const API_URL = "https://prandreluiz.onrender.com/servicos/cadastrar"; //endpoint da api 
   console.log(usuario);
 
   try {
-    //usando fetch para fazer requisição na api 
+    
     const resposta = await fetch(API_URL, {
-      method: "POST", // Método HTTP para cadastro
+      method: "POST", 
       headers: {
-        "Content-Type": "application/json", // Indica que o corpo da requisição é JSON
+        "Content-Type": "application/json", 
       },
-      body: JSON.stringify(usuario), // Converte o objeto para JSON
+      body: JSON.stringify(usuario), 
     });
 
     if (!resposta.ok) {
-      //se der algo difente de "ok" ele vai disparar um erro
+      
       throw new Error(
         `Erro ao cadastrar usuário: ${resposta.status} - ${resposta.statusText}`
       );
     }
 
-    const dados = await resposta.json(); // armazenando a resposta da api
-    console.log("Usuário cadastrado com sucesso:", dados); //mostrando no console se der bom
+    const dados = await resposta.json(); 
+    console.log("Usuário cadastrado com sucesso:", dados); 
   } catch (erro) {
-    console.error("Erro na requisição:", erro.message); // se algo quebra ele mostra aqui
+    console.error("Erro na requisição:", erro.message); 
   }
 }
 
@@ -64,7 +64,7 @@ async function salvar(event) {
 
 async function desenhaTabela() {
   const tbody = document.getElementById("tbody1");
-  const dados = await fetch("http://localhost:8000/servicos/listar").then((res) => res.json());
+  const dados = await fetch("https://prandreluiz.onrender.com/servicos/listar").then((res) => res.json());
   tbody.innerHTML = "";
   for (let i = 0; i < dados.length; i++) {
     const tr = document.createElement("tr");
