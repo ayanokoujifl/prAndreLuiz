@@ -43,10 +43,10 @@ async function excluir(event) {
 
 async function preencheDadosParaEdicao(event) {
     const id = event.target.getAttribute('data-id');
-    const cliente = await buscaUm(id);
-    document.getElementById('id').value = cliente.id;
-    document.getElementById('nome').value = cliente.nome;
-    document.getElementById('idade').value = cliente.idade;
+    const funcionario = await buscaUm(id);
+    document.getElementById('id').value = funcionario.id;
+    document.getElementById('nome').value = funcionario.nome;
+    document.getElementById('idade').value = funcionario.idade;
 }
 
 async function desenhaTabela() {

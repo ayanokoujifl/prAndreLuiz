@@ -6,9 +6,13 @@
     idade: DataTypes.INTEGER,
   });
 
-  Cliente.sync();
+  const Funcionario = conexao.define("Funcionario", {
+    nome: DataTypes.STRING,
+    idade: DataTypes.INTEGER,
+  });
 
-  //export default { Cliente, Funcionario };
+  // Cliente.sync();
+  // Funcionario.sync();
 
   export default Cliente();
 

@@ -1,16 +1,16 @@
-import { tbClientes } from "./base_temporaria.js";
-import urlBackEnd from "./constantes/urls.mjs";
+import { tbFuncionarios } from "./base_temporaria.js";
+import urlBackEnd from "/constantes/urls.mjs";
 
 async function getLista() {
-    const resposta = await fetch(urlBackEnd + '/clientes/listar');
-    const clientes = await resposta.json();
-    return clientes;
+    const resposta = await fetch(urlBackEnd + '/funcionarios/listar');
+    const funcionarios = await resposta.json();
+    return funcionarios;
 }
 
 async function buscaUm(id) {
-    const resposta = await fetch(urlBackEnd + '/clientes/listar/' + id);
-    const cliente = await resposta.json();
-    return cliente;
+    const resposta = await fetch(urlBackEnd + '/funcionarios/listar/' + id);
+    const funcionario = await resposta.json();
+    return funcionario;
 }
 
 async function novo(obj) {
@@ -21,7 +21,7 @@ async function novo(obj) {
         },
         body: JSON.stringify(obj)
     };
-    const resposta = await fetch(urlBackEnd + '/clientes/cadastrar', opt);
+    const resposta = await fetch(urlBackEnd + '/funcionarios/cadastrar', opt);
     const cadastrado = await resposta.json();
     return cadastrado;
 }
@@ -34,7 +34,7 @@ async function altera(obj) {
         },
         body: JSON.stringify(obj)
     };
-    const resposta = await fetch(urlBackEnd + '/clientes/editar', opt);
+    const resposta = await fetch(urlBackEnd + '/funcionarios/editar', opt);
     const editado = await resposta.json();
     return editado;
 }
@@ -47,7 +47,7 @@ async function exclui(id) {
         },
         body: JSON.stringify({ id: id })
     };
-    const resposta = await fetch(urlBackEnd + '/clientes/deletar', opt);
+    const resposta = await fetch(urlBackEnd + '/funcionarios/deletar', opt);
     const apagado = await resposta.json();
     return apagado;
 }
