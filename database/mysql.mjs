@@ -1,10 +1,12 @@
 import { Sequelize } from "sequelize";
 
 const conexao = new Sequelize({
-  database: "sistemahotel",
+  host: 'dpg-cte103ilqhvc73db7ufg-a',
+  port: '5432',
+  database: "sistemahotel_7r4l",
   username: "root",
-  password: "root",
-  dialect: "mysql",
+  password: "wX9db12qbpLjJ5ucxS2yuHwwKxQ1kf9O",
+  dialect: 'postgree',
 });
 
 const tryConnectSequelize = async () => {
