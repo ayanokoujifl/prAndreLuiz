@@ -6,7 +6,7 @@ const conexao = new Sequelize({
   database: "sistemahotel_7r4l",
   username: "root",
   password: "wX9db12qbpLjJ5ucxS2yuHwwKxQ1kf9O",
-  dialect: 'postgree',
+  dialect: 'postgres',
 });
 
 const tryConnectSequelize = async () => {
