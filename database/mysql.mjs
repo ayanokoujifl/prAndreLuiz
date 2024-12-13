@@ -5,7 +5,7 @@ const conexao = new Sequelize({
   port: '5432',
   database: "sistemahotel_7r4l",
   username: "root",
-  password: "root",
+  password: "wX9db12qbpLjJ5ucxS2yuHwwKxQ1kf9O",
   dialect: 'postgres',
 });
 
