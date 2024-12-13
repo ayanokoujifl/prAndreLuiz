@@ -64,7 +64,7 @@ async function salvar(event) {
 
 async function desenhaTabela() {
   const tbody = document.getElementById("tbody1");
-  const dados = await getLista();
+  const dados = await fetch("https://prandreluiz.onrender.com/servicos/cadastrar").then((res) => res.json());
   tbody.innerHTML = "";
   for (let i = 0; i < dados.length; i++) {
     const tr = document.createElement("tr");
