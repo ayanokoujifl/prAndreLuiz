@@ -51,7 +51,7 @@ async function salvar(event) {
   const dados = getLista();
 
   if (indiceSelecionado === -1) {
-    await cadastrarUsuario(obj); // chamando a função que vai cadastrar o usuario
+    await cadastrarUsuario(obj); 
     novo(obj);
   } else {
     dados[indiceSelecionado] = obj;
