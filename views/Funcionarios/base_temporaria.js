@@ -1,5 +1,3 @@
-const tbFuncionarios = [];
+const tbClientes = [];
 
-console.log(tbFuncionarios);
-
-export { tbFuncionarios };
+export { tbClientes };

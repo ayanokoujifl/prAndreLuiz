@@ -17,7 +17,11 @@ import rotas_servicos from "./rotas/rotas_servico.mjs"
 
   app.use(express.static("views"));
 
-  app.listen(8000, function () {
-    tryConnectSequelize();
-    console.log("Escutando");
-  });
+  app.listen(80, '127.0.0.1', function () {
+    console.log('Na escuta.');
+});
+
+  // app.listen(8000, function () {
+  //   tryConnectSequelize();
+  //   console.log("Escutando");
+  // });

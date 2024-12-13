@@ -1,5 +1,3 @@
-const tbQuartos = [];
+const tbClientes = [];
 
-console.log(tbQuartos);
-
-export { tbQuartos };
+export { tbClientes };

@@ -1,59 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <title>Serviços</title>
-  </head>
-
-  <body>
-    <div class="header-container">
-      <h1 class="header-title">Serviços</h1>
-    </div>
-    <form class="form">
-      <div class="form-item">
-        <label for="tipo">Tipo</label>
-        <input type="text" id="tipo" />
-      </div>
-
-      <div class="form-item">
-        <label for="horario">Horário</label>
-        <input type="text" id="horario" />
-      </div>
-
-      <div class="form-item">
-        <label for="valor">Valor</label>
-        <input type="text" id="valor" />
-      </div>
-
-      <div class="form-item">
-        <label for="duracao">Duração</label>
-        <input type="text" id="duracao" />
-      </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Clientes</h1>
+    <form>
+        <input type="hidden" id="id">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome"><br>
+        <label for="idade">Idade</label>
+        <input type="text" id="idade"><br>
+        <button id="btSalvar">Salvar</button>
     </form>
-
-    <div class="buttons">
-      <button id="btSalvar">Salvar</button>
-      <button id="btLimpar">Limpar</button>
-      <button id="btExcluir">Excluir</button>
-      <a href="../index.html"><button type="button">HOME</button></a>
-    </div>
-    <hr />
-
-    <div class="table-container">
-      <table>
+    <hr>
+    <table border="1">
         <thead>
-          <tr>
-            <th>TIPO</th>
-            <th>HORÁRIO</th>
-            <th>VALOR</th>
-            <th>DURAÇÃO</th>
-          </tr>
+            <tr>
+                <th>NOME</th>
+                <th>IDADE</th>
+                <th>AÇÕES</th>
+            </tr>
         </thead>
-        <tbody id="tbody1"></tbody>
-      </table>
-    </div>
-  </body>
-  <script src="manipula_interface.js" type="module"></script>
+        <tbody id="tbody1">
+
+        </tbody>
+    </table>
+</body>
+<script src="manipula_interface.js" type="module"></script>
 </html>
