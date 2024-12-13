@@ -64,7 +64,7 @@ async function salvar(event) {
 
 async function desenhaTabela() {
   const tbody = document.getElementById("tbody1");
-  const dados = await fetch("https://localhost:8000/servicos/listar").then((res) => res.json());
+  const dados = await getLista();
   tbody.innerHTML = "";
   for (let i = 0; i < dados.length; i++) {
     const tr = document.createElement("tr");
