@@ -1,3 +1,0 @@
-const tbClientes = [];
-
-export { tbClientes };
