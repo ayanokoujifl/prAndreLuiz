@@ -12,7 +12,7 @@ const Funcionario = conexao.define("Funcionario", {
     type: DataTypes.STRING,
   },
   email: {
-    type: DataTypes.INTEGER
+    type: DataTypes.STRING
   }});
 
  Funcionario.sync(); 

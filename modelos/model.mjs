@@ -4,17 +4,22 @@
   const Cliente = conexao.define("Cliente", {
     nome: DataTypes.STRING,
     idade: DataTypes.INTEGER,
+    CPF: DataTypes.STRING,
+    email: DataTypes.STRING
   });
 
   const Funcionario = conexao.define("Funcionario", {
     nome: DataTypes.STRING,
     idade: DataTypes.INTEGER,
     CPF: DataTypes.STRING,
-    email: DataTypes.string
+    email: DataTypes.STRING
   });
 
-   Cliente.sync();
-   Funcionario.sync();
+  Cliente.sync({ force: false });  // N recria tables
+  Funcionario.sync({ force: false });
 
-  export default Cliente();
+  export { Cliente, Funcionario };
+
+  // export default Cliente;
+
 

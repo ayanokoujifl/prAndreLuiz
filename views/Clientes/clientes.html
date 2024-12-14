@@ -9,34 +9,39 @@
     <h1>Clientes</h1>
     <form>
         <input type="hidden" id="id">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome"><br>
 
-        <label for="idade">Idade</label>
-        <input type="text" id="idade"><br>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome"><br><br>
 
-        <label for="CPF">CPF</label>
-        <input type="text" id="CPF"><br>
+        <label for="idade">Idade:</label>
+        <input type="text" id="idade"><br><br>
 
-        <label for="email">Email</label>
-        <input type="text" id="email"><br>
+        <label for="CPF">CPF:</label>
+        <input type="text" id="CPF"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email"><br><br>
 
         <button id="btSalvar" type="button">Salvar</button>
     </form>
+
     <hr>
+
     <table border="1">
         <thead>
             <tr>
                 <th>NOME</th>
                 <th>IDADE</th>
-                <th>CPF </th>
+                <th>CPF</th>
                 <th>EMAIL</th>
+                <th>AÇÕES</th> 
             </tr>
         </thead>
         <tbody id="tbody1">
-
+            
         </tbody>
     </table>
+
+    <script type="module" src="manipula_interface.js"></script>
 </body>
-<script src="manipula_interface.js" type="module"></script>
 </html>

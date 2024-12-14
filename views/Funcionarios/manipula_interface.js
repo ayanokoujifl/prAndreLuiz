@@ -3,10 +3,17 @@ import { altera, buscaUm, exclui, getLista, novo } from "./acessa_dados.js";
 async function salvar() {
     const iptNome = document.getElementById('nome');
     const iptIdade = document.getElementById('idade');
+    const iptCPF = document.getElementById('CPF');
+    const iptEmail = document.getElementById('email');
+
     const obj = {
         "nome": iptNome.value,
-        "idade": iptIdade.value
+        "idade": iptIdade.value,
+        "CPF": iptCPF.value,
+        "email": iptEmail.value
     };
+
+    console.log("Salvando novo registro:", obj);
     await novo(obj);
     document.forms[0].reset();
     desenhaTabela();
@@ -18,6 +25,7 @@ async function editar() {
     const iptIdade = document.getElementById('idade');
     const iptCPF = document.getElementById('CPF');
     const iptEmail= document.getElementById('email');
+
     const obj = {
         "id": iptId.value,
         "nome": iptNome.value,
@@ -25,12 +33,13 @@ async function editar() {
         "CPF": iptCPF.value,
         "email": iptEmail.value
     };
+    console.log("Editando cliente:", obj);
     await altera(obj);
     document.forms[0].reset();
     desenhaTabela();
 }
 
-function decideSalvarEditar(event) { // manipulaSalvar
+function decideSalvarEditar(event) { 
     event.preventDefault();
     if(document.getElementById('id').value){
         editar();
@@ -41,6 +50,7 @@ function decideSalvarEditar(event) { // manipulaSalvar
 
 async function excluir(event) {
     const id = event.target.getAttribute('data-id');
+    console.log("Excluindo funcionário com id:", id);
     await exclui(id);
     desenhaTabela();
 }
@@ -64,10 +74,11 @@ async function desenhaTabela() {
         const td1 = document.createElement('td');
         const td2 = document.createElement('td');
         const td3 = document.createElement('td');
-
+        const td4 = document.createElement('td');
+        const td5 = document.createElement('td');
         const btEd = document.createElement('button');
         const btEx = document.createElement('button');
-        
+
         btEd.innerText = 'Editar';
         btEd.setAttribute('data-id', dados[i].id);
         btEd.addEventListener('click', preencheDadosParaEdicao);
@@ -78,11 +89,11 @@ async function desenhaTabela() {
 
         td1.innerText = dados[i].nome;
         td2.innerText = dados[i].idade;
-        td1.innerText = dados[i].CPF;
-        td2.innerText = dados[i].email;
-        td3.append(btEd, btEx);
+        td3.innerText = dados[i].CPF;
+        td4.innerText = dados[i].email;
+        td5.append(btEd, btEx);
 
-        tr.append(td1, td2, td3);
+        tr.append(td1, td2, td3, td4, td5);
         tbody.append(tr);
     }
 }

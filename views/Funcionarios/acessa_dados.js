@@ -47,7 +47,7 @@ async function exclui(id) {
         },
         body: JSON.stringify({ id: id })
     };
-    const resposta = await fetch(urlBackEnd + '/funcionarios/deletar', opt);
+    const resposta = await fetch(urlBackEnd + '/funcionarios/deletar'+ id, opt);
     const apagado = await resposta.json();
     return apagado;
 }

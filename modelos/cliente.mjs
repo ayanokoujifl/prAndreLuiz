@@ -12,7 +12,7 @@ const Cliente = conexao.define("Cliente", {
     type: DataTypes.STRING,
   },
   email: {
-    type: DataTypes.INTEGER
+    type: DataTypes.STRING
   }});
   
  Cliente.sync(); 
