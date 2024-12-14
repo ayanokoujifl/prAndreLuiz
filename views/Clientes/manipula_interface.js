@@ -3,9 +3,13 @@ import { altera, buscaUm, exclui, getLista, novo } from "./acessa_dados.js";
 async function salvar() {
     const iptNome = document.getElementById('nome');
     const iptIdade = document.getElementById('idade');
+    const iptCPF = document.getElementById('CPF');
+    const iptEmail = document.getElementById('email');
     const obj = {
         "nome": iptNome.value,
-        "idade": iptIdade.value
+        "idade": iptIdade.value,
+        "CPF": iptCPF.value,
+        "email": iptEmail.value
     };
     await novo(obj);
     document.forms[0].reset();
@@ -16,10 +20,14 @@ async function editar() {
     const iptId = document.getElementById('id');
     const iptNome = document.getElementById('nome');
     const iptIdade = document.getElementById('idade');
+    const iptCPF = document.getElementById('CPF');
+    const iptEmail = document.getElementById('email');
     const obj = {
         "id": iptId.value,
         "nome": iptNome.value,
-        "idade": iptIdade.value
+        "idade": iptIdade.value,
+        "CPF": iptCPF.value,
+        "email": iptEmail.value
     };
     await altera(obj);
     document.forms[0].reset();
@@ -47,6 +55,8 @@ async function preencheDadosParaEdicao(event) {
     document.getElementById('id').value = cliente.id;
     document.getElementById('nome').value = cliente.nome;
     document.getElementById('idade').value = cliente.idade;
+    document.getElementById('CPF').value = cliente.CPF;
+    document.getElementById('email').value = cliente.email;
 }
 
 async function desenhaTabela() {
@@ -58,7 +68,6 @@ async function desenhaTabela() {
         const td1 = document.createElement('td');
         const td2 = document.createElement('td');
         const td3 = document.createElement('td');
-
         const btEd = document.createElement('button');
         const btEx = document.createElement('button');
         
@@ -72,6 +81,8 @@ async function desenhaTabela() {
 
         td1.innerText = dados[i].nome;
         td2.innerText = dados[i].idade;
+        td1.innerText = dados[i].CPF;
+        td2.innerText = dados[i].email;
         td3.append(btEd, btEx);
 
         tr.append(td1, td2, td3);

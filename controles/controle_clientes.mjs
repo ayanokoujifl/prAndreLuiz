@@ -39,6 +39,10 @@ async function altera(req, res) {
 
   cli.idade = req.body.idade;
 
+  cli.CPF = req.body.CPF;
+
+  cli.email = req.body.email;
+
   await cli.save();
 
   res.json(cli);

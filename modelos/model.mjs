@@ -9,10 +9,12 @@
   const Funcionario = conexao.define("Funcionario", {
     nome: DataTypes.STRING,
     idade: DataTypes.INTEGER,
+    CPF: DataTypes.STRING,
+    email: DataTypes.string
   });
 
-  // Cliente.sync();
-  // Funcionario.sync();
+   Cliente.sync();
+   Funcionario.sync();
 
   export default Cliente();
 

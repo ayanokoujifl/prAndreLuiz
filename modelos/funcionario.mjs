@@ -7,6 +7,12 @@ const Funcionario = conexao.define("Funcionario", {
   },
   idade: {
     type: DataTypes.INTEGER
+  },
+  CPF: {
+    type: DataTypes.STRING,
+  },
+  email: {
+    type: DataTypes.INTEGER
   }});
 
  Funcionario.sync(); 

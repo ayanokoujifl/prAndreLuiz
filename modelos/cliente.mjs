@@ -7,8 +7,14 @@ const Cliente = conexao.define("Cliente", {
   },
   idade: {
     type: DataTypes.INTEGER
+  },
+  CPF: {
+    type: DataTypes.STRING,
+  },
+  email: {
+    type: DataTypes.INTEGER
   }});
-
+  
  Cliente.sync(); 
 
 export default Cliente;

@@ -16,10 +16,14 @@ async function editar() {
     const iptId = document.getElementById('id');
     const iptNome = document.getElementById('nome');
     const iptIdade = document.getElementById('idade');
+    const iptCPF = document.getElementById('CPF');
+    const iptEmail= document.getElementById('email');
     const obj = {
         "id": iptId.value,
         "nome": iptNome.value,
-        "idade": iptIdade.value
+        "idade": iptIdade.value,
+        "CPF": iptCPF.value,
+        "email": iptEmail.value
     };
     await altera(obj);
     document.forms[0].reset();
@@ -47,6 +51,8 @@ async function preencheDadosParaEdicao(event) {
     document.getElementById('id').value = funcionario.id;
     document.getElementById('nome').value = funcionario.nome;
     document.getElementById('idade').value = funcionario.idade;
+    document.getElementById('CPF').value = funcionario.CPF;
+    document.getElementById('email').value = funcionario.email;
 }
 
 async function desenhaTabela() {
@@ -72,6 +78,8 @@ async function desenhaTabela() {
 
         td1.innerText = dados[i].nome;
         td2.innerText = dados[i].idade;
+        td1.innerText = dados[i].CPF;
+        td2.innerText = dados[i].email;
         td3.append(btEd, btEx);
 
         tr.append(td1, td2, td3);

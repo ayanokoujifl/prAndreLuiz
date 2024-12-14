@@ -36,8 +36,9 @@ async function altera(req, res) {
   });
 
   fun.nome = req.body.nome;
-
   fun.idade = req.body.idade;
+  fun.CPF = req.body.CPF;
+  fun.email = req.body.email;
 
   await fun.save();
 
