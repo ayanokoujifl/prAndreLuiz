@@ -1,4 +1,4 @@
-import Cliente from "../modelos/cliente.mjs";
+import Cliente from "../modelos/cliente.mjs"
 
 async function novo(req, res) {
   try {
@@ -6,56 +6,56 @@ async function novo(req, res) {
       nome: req.body.nome,
       idade: req.body.idade,
       CPF: req.body.CPF,
-      email: req.body.email
-    });
+      email: req.body.email,
+    })
 
-    res.json(criado);
+    res.json(criado)
   } catch (e) {
-    console.error(error);
-    res.status(500).json({ error: "Erro ao cadastrar cliente" });
+    console.error(error)
+    res.status(500).json({ error: "Erro ao cadastrar cliente" })
   }
 }
 
 async function um(req, res) {
   const cli = await Cliente.findOne({
     where: { id: req.params.id },
-  });
+  })
 
-  res.json(cli);
+  res.json(cli)
 }
 
 async function todos(req, res) {
-  const todos = await Cliente.findAll();
+  const todos = await Cliente.findAll()
 
-  res.json(todos);
+  res.json(todos)
 }
 
 async function altera(req, res) {
   const cli = await Cliente.findOne({
     where: { id: req.body.id },
-  });
+  })
 
-  cli.nome = req.body.nome;
+  cli.nome = req.body.nome
 
-  cli.idade = req.body.idade;
+  cli.idade = req.body.idade
 
-  cli.CPF = req.body.CPF;
+  cli.CPF = req.body.CPF
 
-  cli.email = req.body.email;
+  cli.email = req.body.email
 
-  await cli.save();
+  await cli.save()
 
-  res.json(cli);
+  res.json(cli)
 }
 
 async function exclui(req, res) {
   const cli = await Cliente.findOne({
     where: { id: req.params.id },
-  });
+  })
 
-  await cli.destroy();
+  await cli.destroy()
 
-  res.json(cli);
+  res.json(cli)
 }
 
-export { novo, todos, um, altera, exclui };
+export { novo, todos, um, altera, exclui }
